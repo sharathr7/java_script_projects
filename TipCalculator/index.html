@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        *{
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-image: url("https://tse2.mm.bing.net/th?id=OIP.btWskU-39oYzGTjp1Wz1HAHaE7&pid=Api&P=0") ;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #main_container{
+            width: 250px;
+            height: calc(100vh - 30px);
+            border-radius: 4px;
+            box-shadow: 0px 0px 10px 0px black;
+            background-color: rgb(245, 242, 237);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            color: #530d0d ;
+        }
+
+        #heading{
+            font-size: 24px;
+            margin: 32px 0px 22px 0px;
+            text-align: center  ;
+        }
+
+        .quesion{
+            font-size: 12px;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+
+        .span{
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        #bill_input,#people_input{
+            width: 72px;
+            outline: none;
+        }
+
+        #search_button{
+            width:182px ;
+            margin-top: 20px;
+            padding: 8px 0px;
+            background-color: #530d0d;
+            color: white ;
+        }
+
+        #amount_container{
+            margin-top: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .para{
+            font-size: 8px;
+        }
+
+        #amount{
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="main_container">
+        <h1 id="heading">Charles' Tip <br> Calculator</h1>
+        <hr size="1px" width="182px" color="gainsboro">
+        <div id="content">
+        <h3 class="quesion">How much was your bill?</h3>
+        <span class="span">$</span><input id="bill_input" type="number">
+        <h3 class="quesion">How was your service?</h3>
+        <select name="percentage" id="percentage_input">
+            <option value="">--choose an option--</option>
+            <option value="30">30%-Outstanding</option>
+            <option value="20">20%-Good</option>
+            <option value="15">15%-It was okay</option>
+            <option value="10">10%-Bad</option>
+            <option value="5">5%-terible</option>
+        </select>
+        <h3 class="quesion">How many people sharing the bill?</h3>
+        <input id="people_input" type="number"><span class="span">people</span>
+        </div>
+
+        <button id="search_button">Calculate!</button>
+
+        <div id="amount_container">
+            <h2 class="para">TIP AMOUNT</h2>
+            <h1 id="amount"><span class="span">$</span>4.00</h1>
+            <h4 class="para">each</h4>
+        </div>
+    </div>
+    
+    <script>
+        const billAmount=document.getElementById('bill_input');
+        const numberOfPeople=document.getElementById('people_input');
+        const serviceQuality=document.getElementById('percentage_input');
+        const calculateButton=document.getElementById('search_button');
+        const amount=document.getElementById('amount');
+
+        init()
+
+        function init(){
+
+            calculateButton.addEventListener('click',tips);
+        }
+
+        function tips(){
+
+            if((billAmount.value === "") || (serviceQuality.value === "") || (numberOfPeople.value === "")){
+                alert("Please fill the empty field");
+            }else{
+
+            let total = ((billAmount.value)*(serviceQuality.value))/((numberOfPeople.value)*100).toFixed(2);
+
+            amount.innerHTML= `<span class="span">$</span>`+total;
+            }
+        }
+    </script>
+</body>
+</html>
