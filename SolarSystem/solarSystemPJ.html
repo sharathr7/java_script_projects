@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./solarSystemPJ.css">
+</head>
+<body>
+        <h1 id="heading">Calculate a weight of an object on a planet</h1>
+        <div id="input-container">
+            <input id="mass-input" type="text" placeholder="Mass in kilogram"/>
+            <select name="" id="planet-input">
+                <option value="">--select-planet--</option>
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="earth">Earth</option>
+                <option value="moon">Moon</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+                <option value="pluto">pluto</option>
+            </select>
+            <button id="calculate-weight-button">Calculate weight</button>
+        </div>
+        <div id="information-container">
+                <img id="planet-image" src="https://raw.githubusercontent.com/geeksterin/WebCurriculum/master/Advance%20Js/Day-04/Project%20image/earth.png" alt="planet"/>
+            <div id="weight-information-container">
+                <span>The weight of the object on <b id="planet-name">Earth</b></span>
+                <div id="weight-container">
+                    <h3 id="planet-weight">98.00 N</h3>
+                </div>
+            </div>
+        </div>
+        <div id="error-message-container">
+            <h3 id="error-message"></h3>
+        </div>
+
+    <script src="./solarSystemPJ.js"></script>
+</body>
+</html>
