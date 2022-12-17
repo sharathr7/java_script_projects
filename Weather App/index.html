@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="action_container">
+        <h1 id="heading">Weather Application</h1>
+        <h3 id="sub_heading">Know the weather without visiting the place</h3>
+        <input type="text" id="search_input" placeholder="Location"/>
+        <button id="search_button">View</button>
+    </div>
+    <div id="info_container">
+        <h1 id="city_name">Bengaluru</h1>
+        <img id="weather_image" alt="" src="http://openweathermap.org/img/wn/01n@2x.png">
+        <h1 id="temperature">19&deg;</h1>
+        <h4 id="season">Rainy</h4>
+        <div id="weather_info">
+            <div id="wind_info">
+                <h3 class="weather_heading">Wind  now</h3>
+                <h1 class="weather_value" id="wind_value">17 <span class="weather_unit">km</span></h1>
+            </div>
+            <div id="humidity_info">
+                <h3 class="weather_heading">Humidity</h3>
+                <h1 class="weather_value" id="humidity_value">17 <span class="weather_unit">%</span></h1>
+            </div>
+            <div id="precipitation_info">
+                <h3 class="weather_heading">Precipitation</h3>
+                <h1 class="weather_value" id="precipitation_value">17 <span class="weather_unit">%</span></h1>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
